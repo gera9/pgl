@@ -11,7 +11,7 @@ public class ContractMapper {
                 contract.getId(),
                 contract.getName(),
                 contract.getDescription(),
-                contract.getTemplate(),
+                contract.getTemplateId(),
                 contract.getCreatedAt());
     }
 
@@ -20,6 +20,6 @@ public class ContractMapper {
                 contractDTO.id(),
                 contractDTO.name(),
                 contractDTO.description(),
-                contractDTO.template());
+                contractDTO.templateId());
     }
 }

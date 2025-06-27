@@ -12,6 +12,7 @@ public class TemplateMapper {
                 template.getName(),
                 template.getDescription(),
                 template.getHtml(),
+                template.getContracts(),
                 template.getCreatedAt());
     }
 

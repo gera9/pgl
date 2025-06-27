@@ -5,23 +5,25 @@ import java.util.UUID;
 import org.springframework.data.relational.core.mapping.Table;
 
 import com.fireal.pgl.BaseEntity;
-import com.fireal.pgl.Template.Template;
 
 @Table("CONTRACTS")
 public class Contract extends BaseEntity {
     private String description;
-    private Template template;
+    private UUID templateId; // FK to parent
 
-    public Contract(UUID id, String name, String description, Template template) {
-        super(id, name);
-        this.description = description;
-        this.template = template;
+    public Contract() {
     }
 
-    public Contract(String name, String description, Template template) {
+    public Contract(UUID id, String name, String description, UUID templateId) {
+        super(id, name);
+        this.description = description;
+        this.templateId = templateId;
+    }
+
+    public Contract(String name, String description, UUID templateId) {
         super(name);
         this.description = description;
-        this.template = template;
+        this.templateId = templateId;
     }
 
     public String getDescription() {
@@ -32,11 +34,11 @@ public class Contract extends BaseEntity {
         this.description = description;
     }
 
-    public Template getTemplate() {
-        return template;
+    public UUID getTemplateId() {
+        return templateId;
     }
 
-    public void setTemplate(Template template) {
-        this.template = template;
+    public void setTemplateId(UUID templateId) {
+        this.templateId = templateId;
     }
 }
